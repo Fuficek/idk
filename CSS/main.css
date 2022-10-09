@@ -1,0 +1,976 @@
+/* MAIN COLOR VARIABLES */
+:root {
+  --textcolor: #000000;
+  --texthighlight: #171717;
+  --backgroundcolor: #ffffff;
+  --darkerbackgroundcolor: #bdbdbd;
+  --neonpink: #F72585;
+  --darkpink: #B5179E;
+  --teal: #7209B7;
+  --bluebasic: #560BAD;
+  --bluedarker: #480CA8;
+  --bluedark: #3A0CA3;
+  --blueocean: #3F37C9;
+  --blueday: #4361EE;
+  --bluelight: #4895EF;
+  --bluehighlight: #4CC9F0;
+  --bluetransparent: rgba(106, 87, 161, 0.685);
+  font-family: 'Archivo', sans-serif;
+  font-size: 16px;
+
+  /*LOW TEXT BARVY*/
+  --bwg: #121315; 
+  --bleached:#9c7b76;
+  --blue:#18a4d9;
+  --GuavaIce:#3a3a3c;
+  --Denim:#3a3a3c; 
+  --Emerald:#01afb3; 
+  --LightSmokeGrey:#5c5c5e; 
+  --GymRed:#a2333b;  
+  --InsideOutCream:#b08572; 
+  --Mocha:#6a3c33; 
+  --MultiColor:#37a26e; 
+  --Paint:#a58584; 
+  --Paris:#707580; 
+  --Purple:#40355c; 
+  --Red:#80132a; 
+  --ShadowToe:#3a3a3c; 
+  --Starfish:#db3218; 
+  --Taxi:#e29b01; 
+  --TSFragment:#ab946d; 
+  --TSMocha:#6b5641; 
+  --VintageBlack:#343235; 
+  --VintageGrey:#3a3a3c; 
+  --white: #121315; 
+  --UniversityRed:#831e29; 
+  --WolfGrey: #a3a2a0; 
+  --YelowStrike:#e29b01; 
+
+  /*HIGH TEXT BARVY*/
+  --atmo:#979292;
+  --berry:#461a37;
+  --bloodline:#242023;
+  --bordeaux:#532d39;
+  --bredToe:#933740;
+  --brotherhood:#d6910e;
+  --crimsonTint:#d4b49f;
+  --DarkMarinaBlue:#193f66;
+  --BlackGymRed:#732932;
+  --heritage:#720e1a;
+  --DarkMocha:#605a54;
+  --NeutralGrey:#121315;
+  --OGStealth:#41454a;
+  --ParisHigh:#8f8d89;
+  --PatentBred:#a2010e;
+  --PatentChicago:#9d173a;
+  --Pollen:#d59941;
+  --PurpleHigh:#463c83;
+  --RetroRoyal:#25518e;
+  --ShadowToe:#565553;
+  --Shattered:#a35129;
+  --SpiderMan:#b52d3a;
+  --StageHaze:#575758;
+  --TsMochaHigh:#64544b;
+  --TurboGreen:#678586;
+  --VarsityRed:#a0222b;
+  --Visionaire:#a3be67;
+  --YellowToe:#e29816;
+}
+  
+  @font-face {
+  font-family: HeaderNormal;
+  src: url(../Fonts/LibreBaskerville-Regular.ttf);
+  }
+  @font-face {
+  font-family: HeaderBarcode;
+  src: url(../Fonts/LibreBarcode128Text-Regular.ttf);
+  }
+  @font-face {
+  font-family: OpenSans;
+  src: url(../Fonts/open-sans.regular.ttf);
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  /* -----------------------NAVBAR----------------------- */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        padding-top: 0;
+        background-color: var(--backgroundcolor);
+      }
+      
+      .logo {
+        cursor: pointer;
+        justify-content: flex-end;
+      }
+      .logo-size{
+        margin-left: auto;
+      }
+      .discord_logo {
+        width: 300px;
+        height: 70px;
+        border-radius: 5px;
+        background: url("../IMG/discord.png") no-repeat;
+        background-size: cover;
+        transition: 0.3s ease;
+      }
+      .discord_logo:hover {
+        width: 350px;
+            transition: 0.3s ease;
+      }
+      
+      .nav__links a,
+      .cta,
+      .overlay__content a {
+        font-size: 24px;
+        font-family: 'Archivo', sans-serif;
+        font-weight: 900;
+        color: var(--textcolor);
+        text-decoration: none;
+        float: left;
+        float: inline-start;
+      }
+      
+      .nav__links {
+        float: left;
+        float: inline-start;
+        list-style: none;
+        display: flex;
+      }
+      
+      .nav__links li {
+        padding: 0px 40px;
+      }
+      
+      .nav__links li a {
+        transition: 0.3s ease;
+      }
+      
+      .nav__links-active{
+        color: var(--texthighlight);
+        text-decoration: underline;
+        text-shadow: var(--textcolor);
+        font-size: 28px;
+      }
+  
+      .nav__links li a:hover {
+        color: var(--texthighlight);
+        text-decoration: underline;
+        text-shadow: var(--textcolor);
+        font-size: 28px;
+        transition: 0.3s ease;
+      }
+      
+      .cta {
+        padding: 9px 25px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s ease ;
+      }
+      
+      .cta:hover {
+        color: var(--texthighlight);
+        text-decoration: underline;
+        text-shadow: var(--textcolor);
+        font-size: 28px;
+        transition: 0.3s ease;
+      }
+      
+      /* Mobile Nav */
+      
+      .menu {
+        display: none;
+        background-color: var(--textcolor);
+        color: var(--backgroundcolor);
+        margin-left: 1rem;
+        padding: 9px 25px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease 0s;
+      }
+      
+      .menu:hover{
+        color: var(--backgroundcolor);
+      }
+  
+      .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        background-color: var(--darkerbackgroundcolor);
+        overflow-x: hidden;
+        transition: width 0.5s ease 0s;
+      }
+      
+      .overlay--active {
+        width: 100%;
+      }
+      
+      .overlay__content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .overlay a {
+        padding: 15px;
+        font-size: 36px;
+        display: block;
+        transition: color 0.3s ease 0s;
+      }
+      
+      .overlay a:hover,
+      .overlay a:focus {
+        color: var(--texthighlight);
+        cursor: pointer;
+      }
+      .overlay .close {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+        color: var(--texthighlight);
+      }
+  
+      
+      @media screen and (max-height: 450px) {
+        .overlay a {
+          font-size: 20px;
+        }
+        .overlay .close {
+          font-size: 40px;
+          top: 15px;
+          right: 35px;
+        }
+      }
+      
+      @media only screen and (max-width: 828px) {
+        .nav__links,
+        .cta {
+          display: none;
+        }
+        .menu {
+          display: inline-block;
+          margin-right: 10px;
+        }
+        header{
+            justify-content: space-between;
+            padding: 10px;
+        }
+      }
+/*==========================================================*/
+
+
+
+/*============================BUTTON==========================*/
+.button{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .btn41-43 {
+    padding: 15px 50px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: var(--textcolor);
+    outline: none !important;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.75s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:0 0 5px #888888;
+  }
+  
+  .btn-42 {
+    border: 2px solid rgb(0, 0, 0);
+    z-index: 1;
+    color: var(--backgroundcolor);
+  }
+  
+  .btn-42:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    transition: all 0.38s ease;
+  }
+  
+  .btn-42:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-42:hover:after {
+    top: 0;
+    height: 100%;
+  }
+  
+  .btn-42:active {
+    top: 2px;
+  }
+
+
+
+/* ---------------------------------------SHOE PAGE---------------------------------------*/
+
+.pagecontent{
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.product{
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: row;
+}
+.product-img{
+  width: 100%;
+}
+.product-images{
+  padding-left: 0;
+}
+
+.other-pics {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.low-img{
+  width: 25%;
+  padding-right: 10px;
+}
+
+.product-name{
+  white-space: nowrap;
+  justify-content: left;
+  padding-top: 120px;
+  margin-left: 30px;
+}
+.text{
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
+h1 {
+  font-family: HeaderNormal;
+  font-size: 4vw;
+  font-weight: 200;
+  padding-bottom: 0;
+}
+h2 {
+  font-family: HeaderBarcode;
+  font-size: 6.25vw;
+  font-weight: 300;
+}
+
+h3 {
+  font-family: HeaderNormal;
+  font-size: 25px;
+  font-weight: 200;
+  margin-top: 20px;
+}
+p{
+  font-family: OpenSans;
+}
+
+  @media (max-width: 1250px) {
+    .pagecontent{
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+    .product{
+      justify-content: center;
+    }
+    .logo-size{
+      display: none;
+    }
+    .nav__links li {
+      padding: 0px 30px;
+    }
+    .logo{
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 800px) {
+    .product{
+    flex-direction: column;
+    }
+    .btn-42 {
+    z-index: 0;
+    }
+    .product-name{
+      margin-top: 30px;
+      padding-top: 0;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-content: space-between;
+      align-items: center;
+      margin-left: 0;
+    }
+    h1{
+      font-size: 8vw;
+    }
+    h2{
+      font-size: 13vw;
+    }
+    .button{
+    display: block;
+    }
+  }
+
+
+/*=========================AIR JORDAN 1 LOW=============================*/
+.container{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    transform-style: preserve-3d;
+    padding: 0 2%;
+  }
+  .container .box{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-left: 10px;
+    transform-style: preserve-3d;
+  }
+  
+  .container .box:hover::before,
+  .container .box:hover::after{
+    opacity: 0.4;
+  }
+  .container .box .name{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    text-align: center;
+    color: var(--textcolor);
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.75s;
+    opacity: 1;
+    z-index: 10;
+  }
+  .container .box:hover .name{
+    top: 60px;
+  }
+  .container .box::before{
+    content: 'AIR JORDAN 1 LOW';
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+    color: var(--textcolor);
+    transition: 0.75s;
+    opacity: 0;
+  }
+  .container .box:hover::before{
+    opacity: 0.15;
+  }
+  .container .box .buy{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75px);
+    background: #000;
+    padding: 10px 25px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: 0.75s;
+    opacity: 0;
+    z-index: 10;
+  }
+  .container .box:hover .buy{
+    bottom: 30px;
+    opacity: 1;
+  }
+  .container .box .circle{
+    position: absolute;
+    top: 199px;
+    left: 50%;
+    transition: 0.75s;
+    transform-style: preserve-3d;
+    z-index: 10;
+    transform: translate3d(-50%,-50%,50px);
+  }
+  .container .box .circle img{
+    height: 300px;
+    opacity: 0;
+    transition: 0.75s;
+  }
+  .container .box:hover .circle img{
+    opacity: 0.75;
+  }
+  .container .box .product-shoe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transition: 0.75s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px) rotate(-15deg);
+  }
+  .container .box:hover .product-shoe{
+    transform: translate3d(-50%,-50%,100px) rotate(-15deg);
+  }
+  .product-shoe {
+    margin-top: 0;
+  }
+
+  .box-odkaz {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    transition: 0.75s;
+    z-index: 11;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,-50%,50px);
+  }
+
+ .name {
+    font-family: sans-serif;
+    font-size: 24px;
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .banner {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
+  .nazev-kategorie{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 3%;
+  }
+  .podtext{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+
+  .mezera {
+    height: 20vh;
+  }
+
+
+/*--------------------TENISKY BANNER SLIDER-------------------------*/
+.section {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+.slide {
+  width: 500%;
+  display: flex;
+}
+.slide input {
+  display: none;
+}
+.st {
+  width: 20%;
+  transition: 0.6s ease;
+}
+.st img{
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+.nav-m {
+  position: absolute;
+  padding-top: 30%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.m-btn {
+  border: 2px solid black;
+  padding: 7px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+.m-btn:not(:last-child) {
+  margin-right: 30px;
+}
+.m-btn:hover {
+  background-color: black;
+}
+#radio1:checked ~.first {
+  margin-left: 0;
+}
+#radio2:checked ~.first {
+  margin-left: -20%;
+}
+#radio3:checked ~.first {
+  margin-left: -40%;
+}
+.nav-auto {
+  position: absolute;
+  padding-top: 30%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+.nav-auto div {
+  border: 2px solid black;
+  padding: 7px;
+  border-radius: 15px;
+  transition: 0.6s;
+}
+.nav-auto div:not(:last-child){
+  margin-right: 30px;
+  justify-content: center;
+}
+#radio1:checked ~ .nav-auto .a-b1{
+  background-color: black;
+}
+#radio2:checked ~ .nav-auto .a-b2{
+  background-color: black;
+}
+#radio3:checked ~ .nav-auto .a-b3{
+  background-color: black;
+}
+
+
+/*--------------------HORIZONTAL SCROLL-------------------------*/
+.horizontal-scroll {
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
+  overflow: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.horiz-box-fotka {
+  display: inline;
+  width: 400px;
+  height: auto;
+  margin: 0px 20px;
+}
+
+.horiz-box {
+  display: inline;
+  margin: 50px 0;
+}
+
+
+
+/*--------------------SIPKA ZPET-------------------------*/
+  .zpet{
+    margin-left: 5%;
+    margin-top: 3%;
+    height: 26px;
+  }
+  .zpet a {
+    display: flex;
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    transition: 0.3s ease;
+    width: 210px;
+  }
+  .zpet a:hover{
+    font-size: 18px;
+    transition: 0.3s ease;
+  }
+  .sipka{
+    content: url("data:image/svg+xml,%3csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 34.075 34.075' style='enable-background:new 0 0 34.075 34.075%3b' xml:space='preserve'%3e%3cg%3e%3cg%3e%3cpath style='fill:%23010002%3b' d='M24.57%2c34.075c-0.505%2c0-1.011-0.191-1.396-0.577L8.11%2c18.432c-0.771-0.771-0.771-2.019%2c0-2.79 L23.174%2c0.578c0.771-0.771%2c2.02-0.771%2c2.791%2c0s0.771%2c2.02%2c0%2c2.79l-13.67%2c13.669l13.67%2c13.669c0.771%2c0.771%2c0.771%2c2.021%2c0%2c2.792 C25.58%2c33.883%2c25.075%2c34.075%2c24.57%2c34.075z'/%3e%3c/g%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3cg%3e%3c/g%3e%3c/svg%3e");
+    width: 20px;
+    height: 20px;
+    margin-right: 0.4%;
+  }
+  /*--------------------footer-------------------------*/
+  footer{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    background-color: var(--texthighlight);
+    padding-left: 2%;
+    padding-right: 2%;
+    justify-content: space-evenly;
+  }
+  footer>a{
+    width: 1%;
+  }
+  .footer-box{
+    text-align: center;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    justify-items: center;
+    justify-content: center;
+  }
+  .footer-box-discord{
+    text-align: center;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .footer-discord {
+    width: 300px;
+    height: 70px;
+    border-radius: 5px;
+    background: url("../IMG/discord.png") no-repeat;
+    background-size: cover;
+    transition: 0.3s ease;
+  }
+  .footer-discord:hover {
+    width: 350px;
+    height: 82.6666666666666666666666666666666666px;
+        transition: 0.3s ease;
+  }
+  .footer-img{
+    background-color: var(--darkerbackgroundcolor);
+  }
+  .footer-link{
+    text-decoration: none;
+    padding-top: 5%;
+    color: rgb(66, 66, 66);
+  }
+  .footer-header{
+    font-family: 'Archivo', sans-serif;
+    color: var(--darkerbackgroundcolor);
+    font-size: 22px;
+  }
+  @media (max-width: 1450px) {
+    .footer-box-discord{
+      display: none;
+    }
+    .footer-discord{
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    .footer-logo{
+      display: none;
+    }
+  }
+  @media (max-width: 520px) {
+    .footer-header{
+      font-size: 15px;
+    }
+    .footer-link{font-size: 12px;}
+  }
+  /*--------------------BARVY-------------------------*/
+
+  /*LOW*/
+  .shoe-barva-1 {
+    color:var(--bwg)
+  }
+    .shoe-barva-2 {
+    color:var(--bleached)
+  }
+  .shoe-barva-3 {
+    color:var(--blue)
+  }
+  .shoe-barva-4 {
+    color:var(--GuavaIce)
+  }
+  .shoe-barva-5 {
+    color:var(--Denim)
+  }
+  .shoe-barva-6 {
+    color:var(--Emerald)
+  }
+  .shoe-barva-7 {
+    color:var(--LightSmokeGrey)
+  }
+  .shoe-barva-8 {
+    color:var(--GymRed)
+  }
+  .shoe-barva-9 {
+    color:var(--InsideOutCream)
+  }
+  .shoe-barva-10 {
+    color:var(--Mocha)
+  }
+  .shoe-barva-11 {
+    color:var(--MultiColor)
+  }
+  .shoe-barva-12 {
+    color:var(--Paint)
+  }
+  .shoe-barva-13 {
+    color:var(--Paris)
+  }
+  .shoe-barva-14 {
+    color:var(--Purple)
+  }
+  .shoe-barva-15 {
+    color:var(--Red)
+  }
+  .shoe-barva-16 {
+    color:var(--)var(--ShadowToe)
+  }
+  .shoe-barva-17 {
+    color:var(--Starfish)
+  }
+  .shoe-barva-18 {
+    color:var(--Taxi)
+  }
+  .shoe-barva-19 {
+    color:var(--TSFragment)
+  }
+  .shoe-barva-20 {
+    color:var(--TSMocha)
+  }
+  .shoe-barva-21 {
+    color:var(--VintageBlack)
+  }
+  .shoe-barva-22 {
+    color:var(--VintageGrey)
+  }
+  .shoe-barva-23 {
+    color:var(--white)
+  }
+  .shoe-barva-24 {
+    color:var(--UniversityRed)
+  }
+  .shoe-barva-25 {
+    color:var(--WolfGrey)
+  }
+  .shoe-barva-26 {
+    color:var(--YelowStrike)
+  }
+
+  /*HIGH*/
+  .shoe-barva-30 {
+    color:var(--atmo)
+  }
+  .shoe-barva-31 {
+    color:var(--berry)
+  }
+  .shoe-barva-32 {
+    color:var(--bloodline)
+  }
+  .shoe-barva-33 {
+    color:var(--bordeaux)
+  }
+  .shoe-barva-34 {
+    color:var(--bredToe)
+  }
+  .shoe-barva-35 {
+    color:var(--brotherhood)
+  }
+  .shoe-barva-36 {
+    color:var(--crimsonTint)
+  }
+  .shoe-barva-37 {
+    color:var(--DarkMarinaBlue)
+  }
+  .shoe-barva-38 {
+    color:var(--BlackGymRed)
+  }
+  .shoe-barva-39 {
+    color:var(--heritage)
+  }
+  .shoe-barva-40 {
+    color:var(--Mocha)
+  }
+  .shoe-barva-41 {
+    color:var(--NeutralGrey)
+  }
+  .shoe-barva-42 {
+    color:var(--OGStealth)
+  }
+  .shoe-barva-43 {
+    color:var(--ParisHigh)
+  }
+  .shoe-barva-44 {
+    color:var(--PatentBred)
+  }
+  .shoe-barva-45 {
+    color:var(--PatentChicago)
+  }
+  .shoe-barva-46 {
+    color:var(--Pollen)
+  }
+  .shoe-barva-47 {
+    color:var(--PurpleHigh)
+  }
+  .shoe-barva-48 {
+    color:var(--RetroRoyal)
+  }
+  .shoe-barva-49 {
+    color:var(--ShadowToe)
+  }
+  .shoe-barva-50 {
+    color:var(--Shattered)
+  }
+  .shoe-barva-51 {
+    color:var(--SpiderMan)
+  }
+  .shoe-barva-52 {
+    color:var(--StageHaze)
+  }
+  .shoe-barva-53 {
+    color:var(--TsMochaHigh)
+  }
+  .shoe-barva-54 {
+    color:var(--TurboGreen)
+  }
+  .shoe-barva-55 {
+    color:var(--VarsityRed)
+  }
+  .shoe-barva-56 {
+    color:var(--Visionaire)
+  }
+  .shoe-barva-57 {
+    color:var(--YellowToe)
+  }
